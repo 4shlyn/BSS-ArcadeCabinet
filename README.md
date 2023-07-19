@@ -7,7 +7,7 @@ To test it out, you'll need:
   - A JRE or JDK version 17 or older
   - If you're NOT using Mac, download SQLITE (can be done through cmd line)
   - If you're NOT using Windows, you'll have to re-do pathways if you want to access the game through the main UI.
-      > Note: You can still access the game normally, and simply imagine that it works.
+      > Note: You can still access the game as you would normally; the processing-java lang would just otherwise handle it for you from the main script.
 
 Note that the following keys will correspond to these actual keys:
   Up, Left, Down, Right, Z, X
