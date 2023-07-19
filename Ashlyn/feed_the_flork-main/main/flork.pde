@@ -8,43 +8,34 @@ String florkDir = "right"; // just starting off with right facing flork
 void florkUpdate() {
 
   if (!transition) {
-    // if L is pressed, change flork to look left
     if (keysCheck("l")) {
       vx -= 0.3;
       florkDir = "left";
-
-      // if R is pressed, change flork to look right
     } else if (keysCheck("r")) {
       vx += 0.3;
       florkDir = "right";
     }
   }
-
-  // if on a sugar rush
   if (bonus == 1.2) {
-    florkNum= 2; // blush flork
+    florkNum= 2;
   } else {
-    florkNum = 0; // basic flork
+    florkNum = 0;
   }
-  
-  // if it's eating
+
   if (eating) {
-    if (bonus==1.2) { // and on sugar rush
-      florkNum = 3; // blush chomp
+    if (bonus==1.2) {
+      florkNum = 3;
     } else {
-      florkNum = 1; // normal chomp
+      florkNum = 1; 
     }
-  } else if (tomatoEating) { // if eating tomato
+  } else if (tomatoEating) {
     florkNum = 4; // sad flork
   }
-
-  // updates flork type based on info above
   if (florkDir == "left") {
     flork_type = florksL[florkNum];
   } else {
     flork_type = florksR[florkNum];
   }
-
   // boundaries
   if (locx >= 640) {
     locx = locx-900;
