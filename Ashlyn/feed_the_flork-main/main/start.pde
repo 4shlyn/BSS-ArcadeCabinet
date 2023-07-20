@@ -38,41 +38,38 @@ void start_state() {
   text("Press X to confirm", 215, 363);
 
 
-
-
-  // when choices are confirmed
-  if (!startBox) { // if on shop...
+  //  choices are confirmed
+  if (!startBox) { // shop hover
     textFont(font);
     if (((keysCheck("u") || keysCheck("d")) && frameCount >= toggle+20)) { // ...but up/down is being clicked, shade start box and switch startbox bool
       startBox = !startBox;
       toggle=frameCount;
-    } else { // ...and nothing is being clicked, shade shop box
+    } else {
       fill(0);
       triangle(135, 240, 135, 248, 140, 244);
     }
-  } else { // if on start...
+  } else { // start hover
     font = createFont("pixeloid.ttf", 20);
     textFont(font);
     if ((keysCheck("u") || keysCheck("d")) && frameCount >= toggle+20) { // ...and up/down is clicked, shade shop box and switch startbox bool
       startBox = !startBox;
       toggle = frameCount;
-    } else { // ...and nothing is being clicked, shade start box
+    } else {
       fill(0);
       triangle(135, 220, 135, 228, 140, 224);
     }
   }
 
-
-  if (keysCheck("x")) { // if x is clicked... (choice is confirmed)
-    if (startBox) { //... and triangle is on start, cue transition and begin gameplay
+  if (keysCheck("x")) { // if x is clicked
+    if (startBox) { 
       transition=true;
       tr_type="to_play";
-    } else { //... and triangle is on shop, display a coming soon msg because i can't finish that much
+    } else { 
       fill(230, 40, 40);
       textSize(17);
       text("Coming Soon!", 248, 411);
     }
   }
-  // music
+
   songplayer(0, 200, 490, 10);
 }
