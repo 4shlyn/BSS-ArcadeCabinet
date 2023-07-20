@@ -5,7 +5,7 @@ PImage flork_type;
 int florkNum;
 String florkDir = "right";
 void florkUpdate() {
-  
+  // costumes
   if (!transition) {
     if (keysCheck("l")) {
       vx -= 0.3;
