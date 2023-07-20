@@ -9,7 +9,7 @@ void start_state() {
   fill(103, 145, 98);
   rect(0, 450, 640, 30);
   
-  // CREDIT TO: CLARA GARCIA-MORENO for THE BUILDING :)
+  // thx clara gm for triangle building:
   fill(200);
   triangle(458, 450, 418, 450, 438, 110);
   fill(0);
