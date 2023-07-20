@@ -1,9 +1,9 @@
+// flork movement and costume management
 float vx, locx;
 float locy = 300;
 PImage flork_type;
 int florkNum;
 String florkDir = "right";
-// flork movement and costume management
 void florkUpdate() {
   
   if (!transition) {
@@ -29,13 +29,13 @@ void florkUpdate() {
     flork_type = florksR[florkNum];
   }
 
+
+  // boundaries, movement and drawing
   if (locx >= 640) locx -= 900;
   else if (locx <= -270) locx = 640;
-
   vx *= 0.95;
   locx+=vx;
   image(flork_type, locx+50, locy);
-
   noStroke();
   fill(103, 145, 98);
   rect(0, 470, 640, 10);
