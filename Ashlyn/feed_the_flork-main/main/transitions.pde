@@ -15,7 +15,6 @@ void slide(String destination) {
     }
   }
 
-  // slides screen cover down to destination
   if (!ts) {
     if (destination == "to_play") {
       gameStart();
@@ -28,12 +27,9 @@ void slide(String destination) {
     fill(0);
     rect(0, 480-e, 640, 490);
     e *= 0.93;
-    // changes state by destination when sliding is over
     if (e<1) {
       e = 480;
       ts = true;
-
-      // song management based on destination
       play = true;
       playing=false;
       if (state=="start") {
@@ -42,14 +38,11 @@ void slide(String destination) {
       } else if (state=="play") {
         songs[1].cue(0);
         songplayer(1, 200, 490, 10);
-
-        songplayer(1, 200, 490, 10);
       } else if (state=="end") {
         songs[2].cue(0);
         songplayer(2, 200, 490, 10);
       }
 
-      // no more transitioning
       transition = false;
     }
   }
