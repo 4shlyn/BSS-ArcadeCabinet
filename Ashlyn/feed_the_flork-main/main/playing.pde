@@ -15,7 +15,7 @@ void gameStart() {
 }
 
 
-// CREDIT TO: CHARLOTTE for PAUSE CODE :) with some alterations
+// thx charlotte for pause code + my alterations
 // displays playing background + checks for x to pause
 void gamePlay() {
   songplayer(1, 200, 490, 10);
@@ -31,24 +31,22 @@ void gamePlay() {
   text(score_full, 20, 20);
   text(tomatoes_full, 20, 40);
 
-  // if x is pressed and it wasn't pressed within the last second
   if (keysCheck("x") && frameCount >= toggle + 60) {
     state = "pause";
     toggle = frameCount;
   }
-  
-  // if tomatoes reaches 3 (or somehow goes over), game over
-  if (tomatoes >=3) {
+
+  if (tomatoes >=5) {
     tr_type="to_end";
     transition=true;
   }
 
-  // the limit of objects on screen will increase until a max of 400
+  // object limit is 400
   if (score%20 <=1 && score < 401) {
     limit = 30 + int(score*1.5);
   }
   
-  // if on a sugar rush (bonus is 1.2 on a sugar rush)
+  // boost 1
   if (bonus == 1.2) {
     fill(246, 197, 238);
     textSize(10);
@@ -58,7 +56,6 @@ void gamePlay() {
 
 // pause UI and input check
 void pause() {
-  
   // UI
   textFont(font);
   fill(0, 0, 0, 128);
@@ -91,6 +88,7 @@ void pause() {
   strokeWeight(1.2);
   line(210, 160, 423, 160);
   textSize(10);
+
   fill(255-abs(255-frameCount%510), 255-abs(255-frameCount-100%510), 255-abs(255-frameCount-200%510));
   text("press x to confirm", 480, 460);
 
@@ -99,8 +97,6 @@ void pause() {
     end_box = !end_box;
     toggle = frameCount;
   }
-   
-  // if x is clicked (choice confirmed)
   if (keysCheck("x") && frameCount >= toggle+10) {
     if (end_box) {
       transition = true;
