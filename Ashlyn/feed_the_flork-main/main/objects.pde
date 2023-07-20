@@ -1,3 +1,4 @@
+// this is the cool part but overcommentated
 PVector sugar_loc = new PVector(400, 0);
 boolean last_act = false;
 boolean sugar_fall = false;
