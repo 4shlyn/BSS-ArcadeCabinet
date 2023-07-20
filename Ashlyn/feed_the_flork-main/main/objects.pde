@@ -12,9 +12,8 @@ void el(int j) {
   int f = int(random(0, 1000));
   float en_check = random(0, 10);
   
-  if (fallers[j]) {
-    
-  } else if (f<2) { // if x is less than 2, start falling and assign object type
+  if (fallers[j]) release(j);
+  else if (f<2) {
     fall_locs[j].x=random(20, 620);
     fallers[j] = true;
     is_an_enemy[j] = false;
