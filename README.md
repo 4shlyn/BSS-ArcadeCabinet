@@ -16,4 +16,12 @@ Note that the following keys will correspond to these actual keys:
   Up, Left, Down, Right, Z, X
   W A S D F G 
 
-I'll try to explain further when I'm back.
+
+Variables that need changing are in **main/main.pde** and **Ashlyn/goBack.pde** (you'll have to move the file into the folder) based off of clone location and your os. 
+Remember to change:
+  String cmd
+  String basic
+  String sketchpath
+
+
+I'll try to explain further when I'm back, but nice for my own memory even.
