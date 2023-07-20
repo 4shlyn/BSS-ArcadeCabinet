@@ -17,11 +17,7 @@ void el(int j) {
     fall_locs[j].x=random(20, 620);
     fallers[j] = true;
     is_an_enemy[j] = false;
-    
-    // tomato
-    if (en_check >= 7 && bonus != 1.2) {
-      is_an_enemy[j] = true;
-    }
+    if (en_check >= 7 && bonus != 1.2) is_an_enemy[j] = true;
   }
   
   if (frameCount >= eatToggle+16) {
@@ -104,8 +100,6 @@ void sugar() {
     }
 
     if (sugar_loc.y < locy+75 && sugar_loc.y > locy+27 && sugar_loc.x > locx+148 && sugar_loc.x < locx+270 && !transition) {
-      // pineapples count for 1.2 times points for 5 seconds
-      // plays candy crush's tasty and gets pink pineapple off screen
       bonus = 1.2;
       rush_start = frameCount;
       sugar_fall = false;
