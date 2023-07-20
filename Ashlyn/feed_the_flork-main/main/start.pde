@@ -41,7 +41,7 @@ void start_state() {
   //  choices are confirmed
   if (!startBox) { // shop hover
     textFont(font);
-    if (((keysCheck("u") || keysCheck("d")) && frameCount >= toggle+20)) { // ...but up/down is being clicked, shade start box and switch startbox bool
+    if (((keysCheck("u") || keysCheck("d")) && frameCount >= toggle+20)) { 
       startBox = !startBox;
       toggle=frameCount;
     } else {
@@ -51,7 +51,7 @@ void start_state() {
   } else { // start hover
     font = createFont("pixeloid.ttf", 20);
     textFont(font);
-    if ((keysCheck("u") || keysCheck("d")) && frameCount >= toggle+20) { // ...and up/down is clicked, shade shop box and switch startbox bool
+    if ((keysCheck("u") || keysCheck("d")) && frameCount >= toggle+20) { 
       startBox = !startBox;
       toggle = frameCount;
     } else {
