@@ -1,5 +1,6 @@
 # BSS-ArcadeCabinet 1.0!
 UI and sqlite management for the cabinet, with my game for a sample
+Displays history of ICS3U games, from 2022 onwards - see the DT Lab for the cabinet!
 
 Cabinet Code last updated June, 2023
 To test it out, you'll need:
